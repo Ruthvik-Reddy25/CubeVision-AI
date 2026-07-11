@@ -1,0 +1,18 @@
+# React
+frontend/node_modules/
+frontend/dist/
+
+# Python
+backend/.venv/
+backend/__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Images uploaded by users
+backend/uploads/
+
+# OS
+.DS_Store
+Thumbs.db
