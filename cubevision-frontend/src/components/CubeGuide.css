@@ -1,0 +1,71 @@
+.cube-guide{
+
+    margin:30px auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.middle-row{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.cube-face{
+
+    width:80px;
+
+    height:80px;
+
+    border-radius:12px;
+
+    background:#334155;
+
+    border:3px solid #475569;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+}
+
+.top{
+
+    margin-bottom:15px;
+
+}
+
+.bottom{
+
+    margin-top:15px;
+
+}
+
+.back{
+
+    margin-top:15px;
+
+    opacity:.45;
+
+}
+
+.cube-face.active{
+
+    background:#22c55e;
+
+    border-color:white;
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 25px rgba(34,197,94,.6);
+
+}

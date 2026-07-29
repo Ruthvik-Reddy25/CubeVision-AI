@@ -1,0 +1,366 @@
+.capture-page{
+
+    min-height:100vh;
+
+    padding:40px;
+
+    background:#0f172a;
+
+    color:white;
+
+}
+
+.upload-card{
+
+    width:420px;
+
+    max-width:100%;
+
+    margin:30px auto;
+
+    padding:50px 30px;
+
+    border:3px dashed #3b82f6;
+
+    border-radius:20px;
+
+    background:#1e293b;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.upload-card:hover{
+
+    border-color:#22d3ee;
+
+    transform:translateY(-5px);
+
+}
+
+.upload-icon{
+
+    font-size:70px;
+
+    margin-bottom:20px;
+
+}
+
+.upload-card h2{
+
+    margin-bottom:10px;
+
+}
+
+.upload-card p{
+
+    color:#cbd5e1;
+
+}
+
+.upload-card small{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#94a3b8;
+
+}
+.capture-container{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.capture-title{
+    font-size:2.8rem;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.capture-subtitle{
+    font-size:1.2rem;
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+
+.progress-tracker{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom:35px;
+}
+
+.progress-item{
+    padding:10px 18px;
+    border-radius:30px;
+    background:#475569;
+    font-weight:600;
+}
+
+.progress-item.completed{
+    background:#22c55e;
+}
+
+.progress-item.current{
+    background:#2563eb;
+}
+
+.capture-guide{
+    background:#1e293b;
+    border-radius:16px;
+    padding:25px;
+    margin:30px auto;
+    max-width:600px;
+    text-align:left;
+}
+
+.capture-guide h3{
+    margin-bottom:15px;
+}
+
+.capture-guide ul{
+    padding-left:20px;
+}
+
+.capture-guide li{
+    margin:10px 0;
+}
+
+.preview-section{
+    margin-top:40px;
+}
+
+.preview-image{
+    width:320px;
+    max-width:100%;
+    border-radius:15px;
+    border:4px solid #3b82f6;
+    margin:20px 0;
+}
+
+.button-group{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.upload-btn,
+.retake-btn{
+    padding:12px 28px;
+    border:none;
+    border-radius:10px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:600;
+}
+
+.upload-btn{
+    background:#2563eb;
+    color:white;
+}
+
+.upload-btn:hover{
+    background:#1d4ed8;
+}
+
+.retake-btn{
+    background:#475569;
+    color:white;
+}
+
+.retake-btn:hover{
+    background:#334155;
+}
+.upload-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    width:420px;
+    height:300px;
+
+    margin:40px auto;
+
+    padding:30px;
+
+    background:#1e293b;
+
+    border:3px dashed #3b82f6;
+    border-radius:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+.camera-modal{
+
+    margin-top:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.camera-modal video{
+
+    width:100%;
+
+    max-width:500px;
+
+    border-radius:20px;
+
+    background:black;
+
+}
+.camera-preview{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:500px;
+
+}
+
+.camera-preview video{
+
+    width:100%;
+
+    border-radius:20px;
+
+    display:block;
+
+}
+
+.camera-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    pointer-events:none;
+
+}
+
+.guide-box{
+
+    width:65%;
+
+    aspect-ratio:1;
+
+    border:4px solid #22c55e;
+
+    border-radius:12px;
+
+    box-shadow:0 0 0 9999px rgba(0,0,0,.35);
+
+}
+
+.camera-controls{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+.captured-preview{
+
+    width:100%;
+
+    border-radius:20px;
+
+    display:block;
+
+}
+@media (max-width:768px){
+    .capture-container{
+
+    width:95%;
+
+    padding:20px;
+
+}
+
+.capture-title{
+
+    font-size:2rem;
+
+}
+
+.progress-tracker{
+
+    flex-wrap:wrap;
+
+    gap:8px;
+
+}
+
+.progress-item{
+
+    font-size:.8rem;
+
+    padding:8px 10px;
+
+}
+
+.preview-image{
+
+    width:100%;
+
+}
+
+.button-group{
+
+    flex-direction:column;
+
+}
+
+.button-group button{
+
+    width:100%;
+
+}
+.camera-modal{
+
+    width:100%;
+
+}
+
+.camera-preview{
+
+    width:100%;
+
+}
+
+.camera-controls{
+
+    flex-direction:column;
+
+}
+
+.camera-controls button{
+
+    width:100%;
+
+}
+}
