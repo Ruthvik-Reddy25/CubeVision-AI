@@ -26,6 +26,7 @@ export default function Capture() {
     const videoRef = useRef(null);
     const canvasRef = useRef(null);
     const streamRef = useRef(null);
+    const guideRef = useRef(null);
 
   const navigate = useNavigate();
 
@@ -100,22 +101,47 @@ export default function Capture() {
 
     }
 
-  function captureImage() {
+    function captureImage() {
 
     const video = videoRef.current;
     const canvas = canvasRef.current;
+    const guide = guideRef.current;
 
-    const context = canvas.getContext("2d");
+    const ctx = canvas.getContext("2d");
 
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
+    // Video displayed on screen
+    const videoRect = video.getBoundingClientRect();
 
-    context.drawImage(
+    // Overlay displayed on screen
+    const guideRect = guide.getBoundingClientRect();
+
+    // Scale from displayed video -> actual video pixels
+    const scaleX = video.videoWidth / videoRect.width;
+    const scaleY = video.videoHeight / videoRect.height;
+
+    // Crop coordinates in video pixels
+    const sx = (guideRect.left - videoRect.left) * scaleX;
+    const sy = (guideRect.top - videoRect.top) * scaleY;
+
+    const sw = guideRect.width * scaleX;
+    const sh = guideRect.height * scaleY;
+
+    // Output canvas
+    canvas.width = sw;
+    canvas.height = sh;
+
+    ctx.drawImage(
         video,
+
+        sx,
+        sy,
+        sw,
+        sh,
+
         0,
         0,
-        canvas.width,
-        canvas.height
+        sw,
+        sh
     );
 
     canvas.toBlob(blob => {
@@ -129,9 +155,10 @@ export default function Capture() {
         );
 
         setImage(file);
+
         stopCamera();
 
-            }, "image/jpeg");
+    }, "image/jpeg");
 
 }
 
@@ -355,7 +382,10 @@ export default function Capture() {
 
                             <div className="camera-overlay">
 
-                                <div className="guide-box"></div>
+                                <div
+                                    ref={guideRef}
+                                    className="guide-box"
+                                ></div>
 
                             </div>
 
