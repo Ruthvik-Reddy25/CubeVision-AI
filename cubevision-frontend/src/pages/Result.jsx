@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import CubeViewer from "../components/cube/CubeViewer";
+import { Alg } from "cubing/alg";
 import "./Result.css";
 
 export default function Result() {
@@ -18,6 +19,10 @@ export default function Result() {
   }
 
   const moves = data.solution.moves;
+  
+
+  const solutionAlg = moves.join(" ");
+  const setupAlg = new Alg(solutionAlg).invert().toString();
 
   const getMoveDescription = (move) => {
     if (!move) return "Cube Solved!";
@@ -60,7 +65,10 @@ export default function Result() {
 
       <div className="result-content">
         <div className="cube-panel">
-          <CubeViewer alg={moves.slice(0, currentStep).join(" ")} />
+          <CubeViewer
+              setupAlg={setupAlg}
+              alg={moves.slice(0, currentStep).join(" ")}
+          />
         </div>
 
         <div className="control-panel">
