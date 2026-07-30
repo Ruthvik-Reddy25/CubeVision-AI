@@ -1,15 +1,14 @@
 import { useEffect, useRef } from "react";
-import { Alg } from "cubing/alg";
 import "cubing/twisty";
 
-export default function CubeViewer({ alg, setupAlg }) {
+export default function CubeViewer({ alg }) {
     const ref = useRef(null);
 
     useEffect(() => {
         if (!ref.current) return;
-        ref.current.experimentalSetupAlg = setupAlg;
+
         ref.current.alg = alg;
-    }, [alg, setupAlg]);
+    }, [alg]);
 
     return (
         <twisty-player
