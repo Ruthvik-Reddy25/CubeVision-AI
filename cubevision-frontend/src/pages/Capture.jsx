@@ -160,7 +160,8 @@ export default function Capture() {
             }
         );
 
-        console.log(response.data);
+        console.log("Response:", response.data);
+        alert(JSON.stringify(response.data));
         setUploading(false);
 
         if (response.data.solution) {
